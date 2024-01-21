@@ -107,87 +107,68 @@ html{
     font-weight: 500;
 }
 
-
-
-
 /* About Styling & 内容 */
-section{
+section {
     padding: 100px 0;
 }
-.about{
+.about {
     font-family: 'Poppins', sans-serif;
 }
-.about .title{
-    position: relative;
-    text-align: center;
-    font-family: 'Ubuntu', sans-serif;
-    margin-bottom: 60px;
-    padding-bottom: 20px;
-    font-size: 40px;
-    font-weight: 500;
+.about .title {
+    text-decoration: underline;
 }
-
-.about .title::before{
-    content: "";
-    position: absolute;
-    bottom: 0px; 
-    left: 50%;
-    width: 180px;
-    height: 3px;
-    background: #111;
-    transform: translateX(-50%);
-}
-
-.about .title::after{
-    content: "Who Am I";
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    padding: 5px;
-    font-size: 20px;
+.about .about-content .right .text span{
     color: crimson;
-    background: white;
-    transform: translateX(-50%);
 }
-
-.about .about-content{
+.about .about-content {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
 }
-
-.about .about-content .left img{
-    height: 400px;
-    width: 400px;
+.about .about-content .left,
+.about .about-content .right {
+    flex-basis: calc(50% - 40px); /* Adjust the width calculation as necessary */
+    margin: 20px; /* This adds margin around the columns */
+}
+.about .about-content .left img {
+    width: 100%; /* Make the image responsive within its container */
+    height: auto;
     border-radius: 6px;
-    object-fit: cover; 
 }
-
-.about .about-content .left{
-    width: 45%;
-}
-
-.about .about-content .right{
-    width: 55%;
-}
-
-.about .about-content .right .text{
+.about .about-content .right .text {
     font-size: 25px;
     font-weight: 600;
     margin-bottom: 10px;
 }
-
-.about .about-content .right .text span{
-    color: crimson;
+.about .about-content .right p {
+    text-align: justify;
 }
 
-.about .about-content .right p{
-    text-align: justify;
-} 
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .about .about-content .left,
+    .about .about-content .right {
+        flex-basis: 100%; /* Take full width on small screens */
+        margin: 10px 0; /* Adjust margin for small screens */
+    }
+    .about .about-content .right .text,
+    .about .about-content .right p {
+        font-size: 16px; /* Smaller text for readability */
+    }
+    .about .title {
+        font-size: 32px; /* Adjust title size for small screens */
+    }
+}
 
-.about .about-content .column{
-    width: 50%;
+@media (max-width: 480px) {
+    .about .about-content .right .text,
+    .about .about-content .right p {
+        font-size: 14px; /* Even smaller text for very small screens */
+    }
+    .about .title {
+        font-size: 28px; /* Smaller title for mobile phones */
+    }
 }
 
 /* skill styling 内容 */
