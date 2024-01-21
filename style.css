@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+/* navbar styling */
+.navbar{
+    position: fixed;
+    width: 100%;
+    padding: 15px 0;
+    z-index: 999;
+    background: black;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.navbar.sticky{
+    padding: 15px 0;
+    background: gray
+}
+
+.navbar.sticky .logo a span{
+    color: white;
+}
+
+.navbar .menu li a{
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: all 0.3s ease;
+}
+
+.navbar .menu li a:hover{
+    color: crimson;
+}
+
+/* 标题大小 */
+.navbar .logo a{
+    color: white;
+    font-size: 35px;
+    font-weight: 600;
+}
+
+/* Subtitle display style */
+.navbar .menu li{
+    list-style-type: none;
+    display: inline-block;
+}
+
+.navbar .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.max-width{
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+
+/* Home Styling & 内容 */
+.home{
+    display: flex;
+    /* background: white; */
+    height: 100vh;
+    background: url("images/background/portfolio-background.jpg") no-repeat center;
+    background-size: cover;
+    min-height: 500px;
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.home .max-width{
+    margin: auto 0 auto 40px;
+}
+
+.home .home-content .text-1{
+    font-size: 99px;
+    color: black;
+}
+.home .home-content .text-2{
+    font-size: 30px;
+}
+.home .home-content .text-3{
+    font-size: 50px;
+    font-weight: 600;
+    margin-left: -3px;
+    color: darkgray;
+}
+.home .home-content .text-4{
+    font-size: 40px;
+    margin: 5px 0;
+}
+.home .home-content .text-4 span{
+    color: crimson;
+    font-weight: 500;
+}
+
+
+
+
+/* About Styling & 内容 */
+section{
+    padding: 100px 0;
+}
+.about{
+    font-family: 'Poppins', sans-serif;
+}
+.about .title{
+    position: relative;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.about .title::before{
+    content: "";
+    position: absolute;
+    bottom: 0px; 
+    left: 50%;
+    width: 180px;
+    height: 3px;
+    background: #111;
+    transform: translateX(-50%);
+}
+
+.about .title::after{
+    content: "Who Am I";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    padding: 5px;
+    font-size: 20px;
+    color: crimson;
+    background: white;
+    transform: translateX(-50%);
+}
+
+.about .about-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about .about-content .left img{
+    height: 400px;
+    width: 400px;
+    border-radius: 6px;
+    object-fit: cover; 
+}
+
+.about .about-content .left{
+    width: 45%;
+}
+
+.about .about-content .right{
+    width: 55%;
+}
+
+.about .about-content .right .text{
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.about .about-content .right .text span{
+    color: crimson;
+}
+
+.about .about-content .right p{
+    text-align: justify;
+} 
+
+.about .about-content .column{
+    width: 50%;
+}
+
+/* skill styling 内容 */
+.skills .title {
+    text-decoration: underline;
+}
+
+.skills {
+    background-color:white;
+}
+
+.skills-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligns items to the start of the flex container */
+    padding: 15px;
+}
+
+.skill {
+    width: 100%; /* Full width of the container */
+    margin-bottom: 10px;
+}
+
+.skill-name {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.skill-bar {
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 5px;
+}
+
+.skill-per {
+    height: 20px;
+    border-radius: 5px;
+    background-color: crimson;
+    line-height: 20px;
+    color: white;
+    text-align: right;
+    padding-right: 5px;
+    transition: width 0.5s ease-in-out;
+}
+
+
+/* experience styling 内容 */
+.experience .title,
+.experience .all-experience
+.experience .all-projects .project-title {
+    text-decoration: underline;
+}
+.experience .title:hover,
+.experience .all-experience
+.experience .all-projects .project-title:hover{
+    text-decoration: underline;
+}
+.experience .all-experience .first,
+.experience .all-projects .project {
+    margin-bottom: 20px; 
+    padding: 15px; 
+}
+.experience .all-experience .title-1,
+.experience .all-projects .project-title {
+    /* margin-bottom: 10px;  */
+    padding: 15px;
+}
+.experience .max-width {
+    padding: 20px; 
+}
+
+/* contact styling 内容 */
+.contact .title {
+    text-decoration: underline;
+}
+
+.contact{
+    font-family: 'Poppins', sans-serif;
+    /* background: white; */
+    /* background: url("images/background/contact_image.jpg") no-repeat center; */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: black;
+} */
+
+.contact-img {
+    width: 100%;  /* Adjust width as needed */
+    height: auto; /* Keeps the aspect ratio intact */
+}
+
+.contact .title{
+    position: relative;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.contact .ways-contact span{
+    color: crimson;
+    font-weight: 500;
+}
