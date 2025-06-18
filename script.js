@@ -15,13 +15,8 @@ $(document).ready(function(){
         $('.menu-btn i').toggleClass("active");
     });
 
-    // Close mobile menu when clicking on a link
-    $('.menu-btn').click(function(){
-        $('.navbar .menu').removeClass("active");
-    });
-
     // Smooth scrolling for navigation links
-    $('.menu-btn').on('click', function(e) {
+    $('.navbar .menu li a').on('click', function(e) {
         e.preventDefault();
         const target = $(this).attr('href');
         const offsetTop = $(target).offset().top - 80;
@@ -29,6 +24,10 @@ $(document).ready(function(){
         $('html, body').animate({
             scrollTop: offsetTop
         }, 800);
+        
+        // Close mobile menu after clicking a link
+        $('.navbar .menu').removeClass("active");
+        $('.menu-btn i').removeClass("active");
     });
 
     // Visitor counter functionality
@@ -73,32 +72,6 @@ $(document).ready(function(){
 
     // Initialize visitor counter
     updateVisitorCount();
-
-    // Add some interactive animations
-    $('.skill').each(function() {
-        $(this).hover(
-            function() {
-                $(this).find('.skill-per').css('transform', 'scale(1.05)');
-            },
-            function() {
-                $(this).find('.skill-per').css('transform', 'scale(1)');
-            }
-        );
-    });
-
-    // Add scroll animations
-    $(window).scroll(function() {
-        $('.skill-per').each(function() {
-            const elementTop = $(this).offset().top;
-            const elementBottom = elementTop + $(this).outerHeight();
-            const viewportTop = $(window).scrollTop();
-            const viewportBottom = viewportTop + $(window).height();
-            
-            if (elementBottom > viewportTop && elementTop < viewportBottom) {
-                $(this).addClass('animate');
-            }
-        });
-    });
 
     // Add typing effect to the welcome text
     function typeWriter(element, text, speed = 100) {
@@ -180,15 +153,6 @@ const scrollTopCSS = `
 
 .scroll-top i {
     font-size: 20px;
-}
-
-.skill-per.animate {
-    animation: skillAnimation 1s ease-in-out;
-}
-
-@keyframes skillAnimation {
-    0% { width: 0%; }
-    100% { width: var(--skill-width); }
 }
 
 body.loaded {
